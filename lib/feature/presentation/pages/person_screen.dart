@@ -1,0 +1,27 @@
+import 'package:app/feature/presentation/widgets/custom_search_delegate.dart';
+import 'package:app/feature/presentation/widgets/persons_list_widget.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+
+class HomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Characters"),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {
+              showSearch(context: context, delegate: CustomSearchDelegate());
+            },
+            icon: Icon(Icons.search),
+            color: Colors.white,
+          )
+        ],
+      ),
+      body: PersonsList(),
+    );
+  }
+}
